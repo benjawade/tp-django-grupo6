@@ -6,7 +6,7 @@ from .models import PatientData
 # Create your views here.
 
 def index(request):
-    return HttpResponse('hola')
+    return render(request, 'tp3/index.html')
 
 def consulta(request):
     file = open('static/CVD_cleaned.csv')
@@ -36,3 +36,4 @@ def consulta(request):
             
         )
     return HttpResponse(request('Archivo cargado'))
+

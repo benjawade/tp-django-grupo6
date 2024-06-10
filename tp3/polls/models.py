@@ -23,5 +23,3 @@ class PatientData(models.Model):
     green_vegetables_consumption = models.FloatField()
     fried_potato_consumption = models.FloatField()
 
-
-    
