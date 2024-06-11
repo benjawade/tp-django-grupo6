@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class PatientData(models.Model):
+class Patient(models.Model):
     general_health = models.CharField(max_length=100)
     checkup = models.CharField(max_length=100)
     exercise = models.CharField(max_length=100)

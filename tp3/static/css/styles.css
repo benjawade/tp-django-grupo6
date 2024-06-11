@@ -1,0 +1,35 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.hero {
+    padding: 100px 0;
+}
+
+.features {
+    background-color: #f8f9fa;
+}
+
+.features .fa-3x {
+    color: #007bff;
+}
+
+.pricing .card {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.pricing .card-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.pricing .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+}

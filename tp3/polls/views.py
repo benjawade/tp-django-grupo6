@@ -1,18 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import csv
-from .models import PatientData
+from .models import Patient
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'tp3/index.html')
+def home(request):
+    return render(request, 'tp3/home.html')
 
 def consulta(request):
     file = open('static/CVD_cleaned.csv')
     datos = csv.DictReader(file)
     for fila in datos:
-        PatientData.objects.create(
+        Patient.objects.create(
             general_health = fila[0],
             checkup = fila[1],
             exercise = fila[2],

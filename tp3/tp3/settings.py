@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tp3',
 ]
 
 MIDDLEWARE = [
@@ -53,10 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tp3.urls'
 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+print (TEMPLATES_DIR)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'tp3/templates')],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
