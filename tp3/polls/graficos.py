@@ -1,9 +1,5 @@
-from models import Patient
 import matplotlib.pyplot as plt
-import numpy as np
+from django.db import models
+from Patient.models import Patient
 
-
-# Definir un diccionario con palabras y sus valores correspondientes
-
-hombres_sanos=Patient.objects.get(general_health='Very Good',)
-
+Hombres_sanos=Patient.objects.get(general_health='Very Good')

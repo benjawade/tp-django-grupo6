@@ -11,7 +11,7 @@ body {
 }
 
 .features .fa-3x {
-    color: #007bff;
+    color: #dc3545;
 }
 
 .pricing .card {
@@ -20,16 +20,25 @@ body {
 }
 
 .pricing .card-header {
-    background-color: #007bff;
+    background-color: #dc3545;
     color: white;
 }
 
 .pricing .btn-outline-primary {
-    border-color: #007bff;
-    color: #007bff;
+    border-color: #dc3545;
+    color: #dc3545;
 }
 
 .footer {
     background-color: #343a40;
     color: white;
+}
+
+.contact {
+    background-color: #f8f9fa;
+}
+
+.contact form .btn-primary {
+    background-color: #dc3545;
+    border: none;
 }
