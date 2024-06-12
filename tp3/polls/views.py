@@ -11,10 +11,11 @@ from django.db.models import Avg,Sum,Min,Max
 # Create your views here.
 
 def home(request):
-    Patient_data=Patient.objects.all()[:20]
-    Patient_GNH_data=Patient_data.aggregate(Avg('General_Health'))
-    print(Patient_GNH_data)
+    Patient_data=Patient.objects.all()
     return render(request, 'tp3/home.html',{'Patient':Patient_data})
+
+def data_set(request):
+    return render(request, 'tp3/data_set.html')
 
 def consulta(request):
     file = open('static/CVD_cleaned.csv')

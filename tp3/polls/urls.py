@@ -17,12 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from . import views 
-from .views import show_graph
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home),
     path('cargar_csv/', views.consulta, name='consulta'),
-    path('show_graph/', show_graph, name='show_graph'),
+    path('home/data-set/',views.data_set)
 ]
 

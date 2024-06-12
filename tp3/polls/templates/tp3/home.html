@@ -1,140 +1,812 @@
 <!DOCTYPE html>
 {%load static%}
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica del Corazón</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <style>
-      table,tr,td,th {
-        border: 1px solid black;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doclab - home</title>
+  <meta name="title" content="Doclab - home">
+  <meta name="description" content="This is a madical html template made by codewithsadee">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'css/hospital.css'%}">
+
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="{%static 'img/images copy/imagescopy/images/hero-banner.png'%}">
+  <link rel="preload" as="image" href="{%static 'img/images copy/images copy/hero-bg.png'%}">
+
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Clínica del Corazón</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pricing">Planes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contacto</a>
-                </li>
+
+<body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="{%static 'img/images copy/images copy/logo.svg'%}" width="136" height="46" alt="Doclab home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="#" class="logo">
+            <img src="{%static 'img/images copy/images copy/logo.svg'%}" width="136" height="46" alt="Doclab home">
+          </a>
+
+          <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Inicio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Doctores</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Servicio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Info</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Contacto</a>
+          </li>
+
+        </ul>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <a href="#" class="btn has-before title-md">Conseguir un turno</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" style="background-image: url('images/hero-bg.png')" aria-label="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle has-before" data-reveal="left">Bienvenido a Doclab</p>
+
+            <h1 class="headline-lg hero-title" data-reveal="left">
+              Encontrar el <br>
+              Doctor mas cercano.
+            </h1>
+
+            <div class="hero-card" data-reveal="left">
+
+              <p class="title-lg card-text">
+                Buscar doctores, clinicas, hospitales, etc.
+              </p>
+
+              <div class="wrapper">
+
+                <div class="input-wrapper title-lg">
+                  <input type="text" name="location" placeholder="Locations" class="input-field">
+
+                  <ion-icon name="location"></ion-icon>
+                </div>
+
+                <button class="btn has-before">
+                  <ion-icon name="search"></ion-icon>
+
+                  <span class="span title-md">Buscar</span>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <figure class="hero-banner" data-reveal="right">
+            <img src="{%static 'img/images copy/images copy/hero-banner.png'%}" width="590" height="517" loading="eager" alt="hero banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="service" aria-label="service">
+        <div class="container">
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-1.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Psiquiatría</a>
+                </h3>
+
+
+                <button class="btn-circle" aria-label="read more about psychiatry">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-2.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="data-set.html">Cardiología</a>
+                </h3>
+
+
+                <button class="btn-circle" aria-label="read more about Gynecology">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-3.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Neumología</a>
+                </h3>
+
+
+                <button class="btn-circle" aria-label="read more about Pulmonology">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-4.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="headline-sm card-title">
+                  <a href="#">Ortopedía</a>
+                </h3>
+
+
+                <button class="btn-circle" aria-label="read more about Orthopedics">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-labelledby="about-label">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left">Sobre Nosotros</p>
+
+            <h2 class="headline-md" data-reveal="left">Los Mejores <br> Doctores</h2>
+
+            <p class="section-text" data-reveal="left">Un equipo de los mejores doctores del mundo, cada uno especializado en su propia área</p>
+
+            <ul class="tab-list" data-reveal="left">
+
+              <li>
+                <button class="tab-btn active">Visión</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Misión</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Estrategia</button>
+              </li>
+
             </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero bg-primary text-white text-center">
-        <div class="container">
-            <h1 class="display-4">Bienvenido a la Clínica del Corazón</h1>
-            <p class="lead">Especialistas en el cuidado y tratamiento de enfermedades cardíacas.</p>
-            <a href="#features" class="btn btn-light btn-lg">Conoce Más</a>
-        </div>
-    </header>
+            <div class="wrapper">
 
-    <!-- Features Section -->
-    <section id="features" class="features py-5">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <i class="fas fa-heartbeat fa-3x mb-3"></i>
-                    <h3>Diagnóstico Avanzado</h3>
-                    <p>Utilizamos la última tecnología para el diagnóstico preciso de enfermedades cardíacas.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-stethoscope fa-3x mb-3"></i>
-                    <h3>Tratamiento Personalizado</h3>
-                    <p>Planes de tratamiento personalizados para cada paciente.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-procedures fa-3x mb-3"></i>
-                    <h3>Cuidado Integral</h3>
-                    <p>Atención integral para mantener tu corazón sano.</p>
-                </div>
+              <ul class="about-list">
+
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                  <span class="span">Seguro</span>
+                </li>
+
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                  <span class="span">Experimentados</span>
+                </li>
+
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                  <span class="span">Rapido</span>
+                </li>
+
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                  <span class="span">Barato</span>
+                </li>
+
+              </ul>
+
             </div>
+
+          </div>
+
+          <figure class="about-banner" data-reveal="right">
+            <img src="{%static 'img/images copy/images copy/about-banner.png'%}" width="554" height="678" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
         </div>
-    </section>
+      </section>
 
-    <!-- Pricing Section -->
-    <table>
-      <h3>Datos de los Pacientes</h3>
-      <th>General Health<th>
-      <th>Checkup<th>
-      <th>Sex<th>
-      <th>Exercise<th>
-      <th>Heart_Disease<th>
-      <th>Skin_Cancer<th>
-      <th>Other_Cancer<th>
-      {%for c in Patient%}
-      <tr>
-        <td>{{c.general_health}}</td>
-        <td>{{c.checkup}}</td>
-        <td>{{c.sex}}</td>
-        <td>{{c.exercise}}</td>
-        <td>{{c.heart_disease}}</td>
-        <td>{{c.skin_cancer}}</td>
-        <td>{{c.other_cancer}}</td>
-      <tr>
-      {% endfor %}
-    <table/>
 
-    <img src="{{graph_url}}" alt='Graph1'
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact py-5">
+
+
+      <!-- 
+        - #LISTING
+      -->
+
+      <section class="section listing" aria-labelledby="listing-label">
         <div class="container">
-            <h2 class="text-center mb-4">Contacto</h2>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-                    </form>
+
+          <ul class="grid-list">
+
+            <li>
+              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Listado de Especialistas</p>
+
+              <h2 class="headline-md" data-reveal="left">Distintas areas</h2>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-1.png'%}" width="71" height="71" loading="lazy" alt="icon">
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer py-3 bg-dark text-white">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2023 Clínica del Corazón. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+                <div>
+                  <h3 class="headline-sm card-title">Psiquiatría</h3>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-2.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <a href="data-set.html"><h3 class="headline-sm card-title">Cardiología</h3></a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-4.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Neumología</h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-5.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Ortopedía</h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-6.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Pediatría</h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+
+                <div class="card-icon">
+                  <img src="{%static 'img/images copy/images copy/icon-7.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+
+                <div>
+                  <h3 class="headline-sm card-title">Osteología</h3>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" aria-labelledby="blog-label">
+        <div class="container">
+
+          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom"> Articulos </p>
+
+          <h2 class="section-title headline-md text-center" data-reveal="bottom">Ultimos Articulos</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                <div class="meta-wrapper">
+
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <span class="span">By Admin</span>
+                  </div>
+
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+
+                    <span class="span">Especialista</span>
+                  </div>
+
+                </div>
+
+                <h3 class="headline-sm card-title">Cancer de mama</h3>
+
+                <time class="title-sm date" datetime="2022-01-28">28 de Febrero, 2024</time>
+
+                <p class="card-text">
+                  Todo lo que Necesitás Saber sobre CÁNCER DE MAMA en Argentina y en el Mundo. Las Noticias de Última Hora, Verídicas y sin Censuras de CÁNCER DE MAMA. Periodismo Relevante.
+                </p>
+
+                <a href="#" class="btn-text title-lg">Leer más</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                <div class="meta-wrapper">
+
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <span class="span">By Admin</span>
+                  </div>
+
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+
+                    <span class="span">Especialista</span>
+                  </div>
+
+                </div>
+
+                <h3 class="headline-sm card-title">Covid-19</h3>
+
+                <time class="title-sm date" datetime="2022-01-28">15 de Mayo, 2024</time>
+
+                <p class="card-text">Todo lo que Necesitás Saber sobre COVID en Argentina y en el Mundo. Las Noticias de Última Hora, Verídicas y sin Censuras de COVID. Periodismo Relevante.</p>
+
+                <a href="#" class="btn-text title-lg">Leer más</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                <div class="meta-wrapper">
+
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <span class="span">By Admin</span>
+                  </div>
+
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+
+                    <span class="span">Especialista</span>
+                  </div>
+
+                </div>
+
+                <h3 class="headline-sm card-title">Ataques cardíacos</h3>
+
+                <time class="title-sm date" datetime="2022-01-28">5 de Junio, 2024</time>
+
+                <p class="card-text">Los ataques del corazón se producen cuando se obstruyen las arterias coronarias, lo que provoca un riego sanguíneo insuficiente y, en pocos minutos, puede causar una muerte súbita cardíaca. Algunos consejos para tratar de revertir la situación. </p>
+
+                <a href="#" class="btn-text title-lg">Leer más</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('images/footer-bg.png')">
+    <div class="container">
+
+      <div class="section footer-top">
+
+        <div class="footer-brand" data-reveal="bottom">
+
+          <a href="#" class="logo">
+            <img src="{%static 'img/images copy/images copy/logo.svg'%}" width="136" height="46" loading="lazy" alt="Doclab home">
+          </a>
+
+          <ul class="contact-list has-after">
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="mail-open-outline"></ion-icon>
+              </div>
+
+              <div>
+                <p> Email : <a href="mailto:contact@website.com" class="contact-link">Doclab@gmail.com</a> </p>
+              </div>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <div>
+                <p>
+                  Telefono de Oficina : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
+                </p>
+
+                <p>
+                  WhattsApp : <a href="tel:000232439493" class="contact-link">+54-9-11-5181-1011</a>
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-list" data-reveal="bottom">
+
+          <p class="headline-sm footer-list-title">Info</p>
+
+          <p class="text">Argentina </p>
+
+          <address class="address">
+            <ion-icon name="map-outline"></ion-icon>
+
+            <span class="text">
+              Pilar, Km 46
+            </span>
+          </address>
+
+        </div>
+
+        <ul class="footer-list" data-reveal="bottom">
+
+          <li>
+            <p class="headline-sm footer-list-title">Servicios</p>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Condiciones</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Listado</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Cómo funciona</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Lo que ofrecemos</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Últimas noticias</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Contactate con Nosotros</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list" data-reveal="bottom">
+
+          <li>
+            <p class="headline-sm footer-list-title">Links Utiles</p>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Condiciones</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Terminos de Uso</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Nuestro Servicio</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Unete al Equipo</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Nueva Lista</a>
+          </li>
+
+          <li>
+            <a href="#" class="text footer-link">Lista del Equipo</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list" data-reveal="bottom">
+
+          <p class="headline-sm footer-list-title">Subscribite</p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email" placeholder="Email" class="input-field title-lg">
+
+            <button type="submit" class="btn has-before title-md">Iniciar Secion</button>
+          </form>
+
+          <p class="text">Recibi notificaciones a tu Email para estar al tanto.</p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-google"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+  <script src="{%static 'css/hospital.js'%}"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>

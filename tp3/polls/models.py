@@ -25,4 +25,4 @@ class Patient(models.Model):
 
 
     def _str_(self):
-        return self.name
+        return Patient
