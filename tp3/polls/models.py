@@ -23,3 +23,6 @@ class Patient(models.Model):
     green_vegetables_consumption = models.FloatField()
     fried_potato_consumption = models.FloatField()
 
+
+    def _str_(self):
+        return self.name

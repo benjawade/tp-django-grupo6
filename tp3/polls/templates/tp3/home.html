@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <style>
+      table,tr,td,th {
+        border: 1px solid black;
+      }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -67,60 +73,29 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing py-5 bg-light">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Consulta Inicial</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$50 <small class="text-muted">/ sesión</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Evaluación inicial</li>
-                                <li>Plan de tratamiento</li>
-                                <li>Pruebas básicas</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Agendar Cita</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Tratamiento Mensual</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$200 <small class="text-muted">/ mes</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Consultas ilimitadas</li>
-                                <li>Monitoreo constante</li>
-                                <li>Pruebas avanzadas</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-primary">Suscribirse</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <div class="card-header">
-                            <h4 class="my-0 font-weight-normal">Plan Anual</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title">$2000 <small class="text-muted">/ año</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Chequeos anuales completos</li>
-                                <li>Acceso prioritario</li>
-                                <li>Soporte 24/7</li>
-                            </ul>
-                            <button type="button" class="btn btn-lg btn-block btn-primary">Unirse</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <table>
+      <h3>Datos de los Pacientes</h3>
+      <th>General Health<th>
+      <th>Checkup<th>
+      <th>Sex<th>
+      <th>Exercise<th>
+      <th>Heart_Disease<th>
+      <th>Skin_Cancer<th>
+      <th>Other_Cancer<th>
+      {%for c in Patient%}
+      <tr>
+        <td>{{c.general_health}}</td>
+        <td>{{c.checkup}}</td>
+        <td>{{c.sex}}</td>
+        <td>{{c.exercise}}</td>
+        <td>{{c.heart_disease}}</td>
+        <td>{{c.skin_cancer}}</td>
+        <td>{{c.other_cancer}}</td>
+      <tr>
+      {% endfor %}
+    <table/>
+
+    <img src="{{graph_url}}" alt='Graph1'
 
     <!-- Contact Section -->
     <section id="contact" class="contact py-5">
