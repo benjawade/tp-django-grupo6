@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Riesgo de Corazón</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-container {
+            display: none; /* Inicialmente oculto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Evaluación de Riesgo de Corazón</h1>
+        <form id="evaluation-form" method="post" action="{% url 'evaluar_html' %}" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="age">Edad:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cholesterol">Colesterol Alto:</label>
+                <select id="cholesterol" name="cholesterol" class="form-control" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Sí</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="smoking">Fuma:</label>
+                <select id="smoking" name="smoking" class="form-control" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Sí</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="general_health">Salud General:</label>
+                <select id="general_health" name="general_health" class="form-control" required>
+                    <option value="poor">Pobre</option>
+                    <option value="fair">Regular</option>
+                    <option value="good">Buena</option>
+                    <option value="very good">Muy buena</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exercise">Ejercicio Regular:</label>
+                <select id="exercise" name="exercise" class="form-control" required>
+                    <option value="Yes">Sí</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Evaluar</button>
+        </form>
+        {% if resultado %}
+        <div id="result-container" class="mt-4">
+            <div id="result" class="alert {% if 'Propenso' in resultado %}alert-danger{% else %}alert-success{% endif %}">
+                {{ resultado }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

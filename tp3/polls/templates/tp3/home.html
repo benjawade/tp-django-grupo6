@@ -1,14 +1,13 @@
 <!DOCTYPE html>
+<html lang="es">
 {%load static%}
-<html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doclab - home</title>
-  <meta name="title" content="Doclab - home">
-  <meta name="description" content="This is a madical html template made by codewithsadee">
+  <title>Doclab - Cardiología Profesional</title>
+  <meta name="title" content="Doclab - Cardiología Profesional">
+  <meta name="description" content="Esta es una plantilla HTML médica profesional hecha por codewithsadee">
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +18,10 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="{%static 'img/images copy/imagescopy/images/hero-banner.png'%}">
+  <link rel="preload" as="image" href="{%static 'img/images copy/images copy/hero-banner.png'%}">
   <link rel="preload" as="image" href="{%static 'img/images copy/images copy/hero-bg.png'%}">
 
-</head>
+</head> 
 
 <body id="top">
 
@@ -33,10 +32,6 @@
   <div class="preloader" data-preloader>
     <div class="circle"></div>
   </div>
-
-
-
-
 
   <!-- 
     - #HEADER
@@ -57,7 +52,7 @@
             <img src="{%static 'img/images copy/images copy/logo.svg'%}" width="136" height="46" alt="Doclab home">
           </a>
 
-          <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
+          <button class="nav-close-btn" aria-label="cerrar menú" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
@@ -66,23 +61,23 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link title-md">Inicio</a>
+            <a href="#top" class="navbar-link title-md">Inicio</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link title-md">Doctores</a>
+            <a href="#about-label" class="navbar-link title-md">Doctores</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link title-md">Servicio</a>
+            <a href="#service" class="navbar-link title-md">Servicios</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link title-md">Info</a>
+            <a href="#blog-label" class="navbar-link title-md">Información</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link title-md">Contacto</a>
+            <a href="#footer" class="navbar-link title-md">Contacto</a>
           </li>
 
         </ul>
@@ -123,20 +118,16 @@
 
       </nav>
 
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <button class="nav-open-btn" aria-label="abrir menú" data-nav-toggler>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
 
-      <a href="#" class="btn has-before title-md">Conseguir un turno</a>
+      <button class="btn has-before title-md" onclick="openAppointmentPrompt()">Conseguir una cita</button>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
 
     </div>
   </header>
-
-
-
-
 
   <main>
     <article>
@@ -150,23 +141,24 @@
 
           <div class="hero-content">
 
-            <p class="hero-subtitle has-before" data-reveal="left">Bienvenido a Doclab</p>
+            <p class="hero-subtitle has-before headline-lg" data-reveal="left">Bienvenido a Doclab</p>
+            <img src="{%static 'img/images copy/images copy/corazongif.gif'%}" alt="Corazón latiendo" style="width: 60px; height: 60px; margin-left: 10px; display: inline-block; vertical-align: middle;">
 
-            <h1 class="headline-lg hero-title" data-reveal="left">
-              Encontrar el <br>
-              Doctor mas cercano.
+            <h1 class="headline-lg hero-title" data-reveal="left" style="font-size: 2rem; color: white; margin-top: 70px;">
+              Encuentra el <br>
+              Cardiólogo más cercano.
             </h1>
 
             <div class="hero-card" data-reveal="left">
 
               <p class="title-lg card-text">
-                Buscar doctores, clinicas, hospitales, etc.
+                Busca cardiólogos, clínicas, hospitales, etc.
               </p>
 
               <div class="wrapper">
 
                 <div class="input-wrapper title-lg">
-                  <input type="text" name="location" placeholder="Locations" class="input-field">
+                  <input type="text" name="location" placeholder="Ubicaciones" class="input-field">
 
                   <ion-icon name="location"></ion-icon>
                 </div>
@@ -191,103 +183,60 @@
         </div>
       </section>
 
-
-
-
-
       <!-- 
         - #SERVICE
       -->
 
-      <section class="service" aria-label="service">
+      <section class="service" id="service" aria-label="service">
         <div class="container">
-
-          <ul class="service-list">
-
+          <ul class="service-list" style="display: flex; justify-content: center;">
             <li>
               <div class="service-card" data-reveal="bottom">
-
                 <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-1.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                  <img src="{% static 'img/images copy/images copy/icon-2.png' %}" width="71" height="71" loading="lazy" alt="icon">
                 </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Psiquiatría</a>
-                </h3>
-
-
-                <button class="btn-circle" aria-label="read more about psychiatry">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-2.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
                 <h3 class="headline-sm card-title">
                   <a href="data-set.html">Cardiología</a>
                 </h3>
-
-
-                <button class="btn-circle" aria-label="read more about Gynecology">
+                <button class="btn-circle" aria-label="leer más sobre Cardiología" onclick="window.location.href='data-set.html'">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
-
+              </div>
+            </li>
+      
+            <!-- Segunda tarjeta de servicio -->
+            <li>
+              <div class="service-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="{% static 'img/images copy/images copy/icon-1.png' %}" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="evaluar-html">Evaluacion</a>
+                </h3>
+                <button class="btn-circle" aria-label="leer más sobre tu Evaluacion Cardiovascular" onclick="window.location.href='formulario.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
               </div>
             </li>
 
             <li>
               <div class="service-card" data-reveal="bottom">
-
                 <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-3.png'%}" width="71" height="71" loading="lazy" alt="icon">
+                  <img src="{% static 'img/images copy/images copy/icon-3.png' %}" width="71" height="71" loading="lazy" alt="icon">
                 </div>
-
                 <h3 class="headline-sm card-title">
-                  <a href="#">Neumología</a>
+                  <a href="graph">Resultados</a>
                 </h3>
-
-
-                <button class="btn-circle" aria-label="read more about Pulmonology">
+                <button class="btn-circle" aria-label="leer más sobre tus resultados" onclick="window.location.href='tabla_datos.html'">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
-
               </div>
             </li>
-
-            <li>
-              <div class="service-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-4.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Ortopedía</a>
-                </h3>
-
-
-                <button class="btn-circle" aria-label="read more about Orthopedics">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
-              </div>
-            </li>
-
+            
           </ul>
-
         </div>
       </section>
-
-
-
-
+      
 
       <!-- 
         - #ABOUT
@@ -300,27 +249,39 @@
 
             <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left">Sobre Nosotros</p>
 
-            <h2 class="headline-md" data-reveal="left">Los Mejores <br> Doctores</h2>
+            <h2 class="headline-md" data-reveal="left">Los Mejores <br> Cardiólogos</h2>
 
-            <p class="section-text" data-reveal="left">Un equipo de los mejores doctores del mundo, cada uno especializado en su propia área</p>
+            <p class="section-text" data-reveal="left">Un equipo de los mejores cardiólogos del mundo, cada uno especializado en su propia área</p>
 
             <ul class="tab-list" data-reveal="left">
 
               <li>
-                <button class="tab-btn active">Visión</button>
+                <button class="tab-btn active" onclick="showTabContent('vision', this)">Visión</button>
               </li>
 
               <li>
-                <button class="tab-btn">Misión</button>
+                <button class="tab-btn" onclick="showTabContent('mision', this)">Misión</button>
               </li>
 
               <li>
-                <button class="tab-btn">Estrategia</button>
+                <button class="tab-btn" onclick="showTabContent('estrategia', this)">Estrategia</button>
               </li>
 
             </ul>
 
             <div class="wrapper">
+
+              <div id="vision" class="tab-content active" data-reveal="left">
+                <p>Nuestra visión es ser líderes en el campo de la cardiología, proporcionando atención médica de alta calidad y mejorando la salud cardiovascular de nuestros pacientes.</p>
+              </div>
+
+              <div id="mision" class="tab-content" data-reveal="left">
+                <p>Nuestra misión es ofrecer servicios de cardiología excepcionales, utilizando tecnología avanzada y un enfoque centrado en el paciente para lograr los mejores resultados posibles.</p>
+              </div>
+
+              <div id="estrategia" class="tab-content" data-reveal="left">
+                <p>Nuestra estrategia se basa en la innovación continua, la investigación y la educación para mantenernos a la vanguardia de los avances en cardiología y brindar un cuidado integral a nuestros pacientes.</p>
+              </div>
 
               <ul class="about-list">
 
@@ -339,13 +300,13 @@
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Rapido</span>
+                  <span class="span">Rápido</span>
                 </li>
 
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Barato</span>
+                  <span class="span">Accesible</span>
                 </li>
 
               </ul>
@@ -362,124 +323,6 @@
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #LISTING
-      -->
-
-      <section class="section listing" aria-labelledby="listing-label">
-        <div class="container">
-
-          <ul class="grid-list">
-
-            <li>
-              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Listado de Especialistas</p>
-
-              <h2 class="headline-md" data-reveal="left">Distintas areas</h2>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-1.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Psiquiatría</h3>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-2.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <a href="data-set.html"><h3 class="headline-sm card-title">Cardiología</h3></a>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-4.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Neumología</h3>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-5.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Ortopedía</h3>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-6.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Pediatría</h3>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="listing-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="{%static 'img/images copy/images copy/icon-7.png'%}" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <div>
-                  <h3 class="headline-sm card-title">Osteología</h3>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
       <!-- 
         - #BLOG
       -->
@@ -487,9 +330,9 @@
       <section class="section blog" aria-labelledby="blog-label">
         <div class="container">
 
-          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom"> Articulos </p>
+          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom"> Artículos </p>
 
-          <h2 class="section-title headline-md text-center" data-reveal="bottom">Ultimos Articulos</h2>
+          <h2 class="section-title headline-md text-center" data-reveal="bottom">Últimos Artículos</h2>
 
           <ul class="grid-list">
 
@@ -501,69 +344,7 @@
                   <div class="card-meta">
                     <ion-icon name="person-outline"></ion-icon>
 
-                    <span class="span">By Admin</span>
-                  </div>
-
-                  <div class="card-meta">
-                    <ion-icon name="folder-outline"></ion-icon>
-
-                    <span class="span">Especialista</span>
-                  </div>
-
-                </div>
-
-                <h3 class="headline-sm card-title">Cancer de mama</h3>
-
-                <time class="title-sm date" datetime="2022-01-28">28 de Febrero, 2024</time>
-
-                <p class="card-text">
-                  Todo lo que Necesitás Saber sobre CÁNCER DE MAMA en Argentina y en el Mundo. Las Noticias de Última Hora, Verídicas y sin Censuras de CÁNCER DE MAMA. Periodismo Relevante.
-                </p>
-
-                <a href="#" class="btn-text title-lg">Leer más</a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card has-before has-after" data-reveal="bottom">
-
-                <div class="meta-wrapper">
-
-                  <div class="card-meta">
-                    <ion-icon name="person-outline"></ion-icon>
-
-                    <span class="span">By Admin</span>
-                  </div>
-
-                  <div class="card-meta">
-                    <ion-icon name="folder-outline"></ion-icon>
-
-                    <span class="span">Especialista</span>
-                  </div>
-
-                </div>
-
-                <h3 class="headline-sm card-title">Covid-19</h3>
-
-                <time class="title-sm date" datetime="2022-01-28">15 de Mayo, 2024</time>
-
-                <p class="card-text">Todo lo que Necesitás Saber sobre COVID en Argentina y en el Mundo. Las Noticias de Última Hora, Verídicas y sin Censuras de COVID. Periodismo Relevante.</p>
-
-                <a href="#" class="btn-text title-lg">Leer más</a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card has-before has-after" data-reveal="bottom">
-
-                <div class="meta-wrapper">
-
-                  <div class="card-meta">
-                    <ion-icon name="person-outline"></ion-icon>
-
-                    <span class="span">By Admin</span>
+                    <span class="span">Por Admin</span>
                   </div>
 
                   <div class="card-meta">
@@ -578,9 +359,69 @@
 
                 <time class="title-sm date" datetime="2022-01-28">5 de Junio, 2024</time>
 
-                <p class="card-text">Los ataques del corazón se producen cuando se obstruyen las arterias coronarias, lo que provoca un riego sanguíneo insuficiente y, en pocos minutos, puede causar una muerte súbita cardíaca. Algunos consejos para tratar de revertir la situación. </p>
+                <p class="card-text">Información detallada sobre los síntomas, causas y tratamientos de los ataques cardíacos.</p>
 
-                <a href="#" class="btn-text title-lg">Leer más</a>
+                <a href="https://cnnespanol.cnn.com/2019/12/16/comer-chiles-reduce-el-riesgo-de-muerte-por-ataque-cardiaco-y-accidente-cerebrovascular-segun-estudio/" class="btn-text title-lg">Leer más</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                <div class="meta-wrapper">
+
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <span class="span">Por Admin</span>
+                  </div>
+
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+
+                    <span class="span">Especialista</span>
+                  </div>
+
+                </div>
+
+                <h3 class="headline-sm card-title">Prevención de enfermedades cardíacas</h3>
+
+                <time class="title-sm date" datetime="2022-01-28">12 de Junio, 2024</time>
+
+                <p class="card-text">Consejos y estrategias para prevenir enfermedades cardíacas y mantener un corazón saludable.</p>
+
+                <a href="https://cnnespanol.cnn.com/video/cardiovascular-consejos-tips-prevenirenfermedades-cnn-primera" class="btn-text title-lg">Leer más</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                <div class="meta-wrapper">
+
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <span class="span">Por Admin</span>
+                  </div>
+
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+
+                    <span class="span">Especialista</span>
+                  </div>
+
+                </div>
+
+                <h3 class="headline-sm card-title">Tratamientos modernos para la insuficiencia cardíaca</h3>
+
+                <time class="title-sm date" datetime="2022-01-28">7 de Julio, 2024</time>
+
+                <p class="card-text">Exploración de los tratamientos más recientes y efectivos para la insuficiencia cardíaca.</p>
+
+                <a href="https://cnnespanol.cnn.com/2024/05/14/resultados-ensayo-clinico-mas-largo-de-wegovy-perdida-peso-efectos-secundarios-y-la-proteccion-del-corazon-trax/" class="btn-text title-lg">Leer más</a>
 
               </div>
             </li>
@@ -593,15 +434,11 @@
     </article>
   </main>
 
-
-
-
-
   <!-- 
     - #FOOTER
   -->
 
-  <footer class="footer" style="background-image: url('images/footer-bg.png')">
+  <footer class="footer" id="footer" style="background-image: url('images/footer-bg.png')">
     <div class="container">
 
       <div class="section footer-top">
@@ -634,11 +471,11 @@
 
               <div>
                 <p>
-                  Telefono de Oficina : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
+                  Teléfono de Oficina : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
                 </p>
 
                 <p>
-                  WhattsApp : <a href="tel:000232439493" class="contact-link">+54-9-11-5181-1011</a>
+                  WhatsApp : <a href="tel:000232439493" class="contact-link">+54-9-11-5181-1011</a>
                 </p>
               </div>
 
@@ -699,7 +536,7 @@
         <ul class="footer-list" data-reveal="bottom">
 
           <li>
-            <p class="headline-sm footer-list-title">Links Utiles</p>
+            <p class="headline-sm footer-list-title">Links Útiles</p>
           </li>
 
           <li>
@@ -707,7 +544,7 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terminos de Uso</a>
+            <a href="#" class="text footer-link">Términos de Uso</a>
           </li>
 
           <li>
@@ -715,7 +552,7 @@
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Unete al Equipo</a>
+            <a href="#" class="text footer-link">Únete al Equipo</a>
           </li>
 
           <li>
@@ -730,15 +567,15 @@
 
         <div class="footer-list" data-reveal="bottom">
 
-          <p class="headline-sm footer-list-title">Subscribite</p>
+          <p class="headline-sm footer-list-title">Suscríbete</p>
 
           <form action="" class="footer-form">
             <input type="email" name="email" placeholder="Email" class="input-field title-lg">
 
-            <button type="submit" class="btn has-before title-md">Iniciar Secion</button>
+            <button type="submit" class="btn has-before title-md">Iniciar Sesión</button>
           </form>
 
-          <p class="text">Recibi notificaciones a tu Email para estar al tanto.</p>
+          <p class="text">Recibe notificaciones a tu Email para estar al tanto.</p>
 
         </div>
 
@@ -785,19 +622,30 @@
     </div>
   </footer>
 
-
-
-
-
   <!-- 
     - #BACK TO TOP
   -->
 
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+  <a href="#top" class="back-top-btn" aria-label="volver arriba" data-back-top-btn>
     <ion-icon name="chevron-up"></ion-icon>
   </a>
 
-
+  <!-- Appointment Popup -->
+  <div id="appointment-popup" class="appointment-popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeAppointmentPopup()">&times;</span>
+      <h2>Conseguir una cita</h2>
+      <form>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" name="date" required>
+        <button type="submit" class="btn has-before title-md">Enviar</button>
+      </form>
+    </div>
+  </div>
 
   <script src="{%static 'css/hospital.js'%}"></script>
 
@@ -806,6 +654,75 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    function showTabContent(tabName, element) {
+      var i;
+      var x = document.getElementsByClassName("tab-content");
+      var btns = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < btns.length; i++) {
+        btns[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      element.classList.add("active");
+    }
+
+    // Initialize the first tab to be visible
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("vision").style.display = "block";
+    });
+
+    // Open appointment popup
+    function openAppointmentPrompt() {
+      document.getElementById("appointment-popup").style.display = "block";
+    }
+
+    // Close appointment popup
+    function closeAppointmentPopup() {
+      document.getElementById("appointment-popup").style.display = "none";
+    }
+  </script>
+
+  <style>
+    .appointment-popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close-btn {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 
 </body>
 

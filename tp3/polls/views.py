@@ -3,16 +3,15 @@ from django.shortcuts import render
 import csv
 from .models import *
 import matplotlib.pyplot as plt
-import io
-from django.core.files.storage import FileSystemStorage
-import os
-from django.conf import settings 
-from django.db.models import Avg,Sum,Min,Max
-# Create your views here.
+from django.urls import reverse
+import pandas as pd
+
+
+
 
 def home(request):
-    Patient_data=Patient.objects.all()
-    return render(request, 'tp3/home.html',{'Patient':Patient_data})
+    return render(request, 'tp3/home.html',{'Patient':Patient})
+    
 
 def data_set(request):
     return render(request, 'tp3/data_set.html')
@@ -46,31 +45,49 @@ def consulta(request):
         )
     return HttpResponse(request('Archivo cargado'))
 
-def show_graph(request):
-    # Obtener datos de los pacientes
-    patients = Patient.objects.all()
-    General_Health = [patient.general_health for patient in patients]
-    Heart_Deseases = [patient.heart_disease for patient in patients]
 
-    # Crear la figura y el gráfico
-    plt.figure(figsize=(10,6))
-    plt.plot(General_Health,Heart_Deseases)
-    plt.xlabel('general_health')
-    plt.ylabel('heart_disease')
-    plt.title('Salud de los Pacientes')
-    plt.show()
+def tabla_datos(request):
+    Patient_data=Patient.objects.all()
+    return render(request, 'tp3/tabla_datos.html', {'Patient': Patient_data})
 
-    # Guardar la figura en un archivo temporal
-    graph_dir = os.path.join(settings.BASE_DIR, 'static', 'img')
-    os.makedirs(graph_dir, exist_ok=True)  # Crear el directorio si no existe
-    graph_path = os.path.join(graph_dir, 'patient_heart_rates.png')
 
-    # Guardar la figura en el archivo
-    plt.savefig(graph_path)
+from django.shortcuts import render
+
+# Datos de ejemplo para la lógica de predicción mejorada
+RISK_FACTORS = {
+    'age': 60,
+    'cholesterol': 'Yes',
+    'smoking': 'Yes',
+    'general_health': ['poor', 'fair'],
+    'exercise': 'No'
+}
+
+def evaluar_problema_corazon(age, cholesterol, smoking, general_health, exercise):
+    # Definir criterios de riesgo basados en el análisis de datos
+    age_risk = age >= RISK_FACTORS['age']
+    cholesterol_risk = cholesterol == RISK_FACTORS['cholesterol']
+    smoking_risk = smoking == RISK_FACTORS['smoking']
+    general_health_risk = general_health in RISK_FACTORS['general_health']
+    exercise_risk = exercise == RISK_FACTORS['exercise']
     
+    # Calcular el riesgo total
+    risk_score = sum([age_risk, cholesterol_risk, smoking_risk, general_health_risk, exercise_risk])
+    
+    # Definir umbral de riesgo
+    if risk_score >= 3:
+        return "Propenso a tener problemas de corazón"
+    else:
+        return "No es propenso a tener problemas de corazón"
 
-    # Pasar la URL del archivo a la plantilla
-    graph_url = os.path.join(settings.STATIC_URL, 'img', 'patient_heart_rates.png')
+def evaluar_html(request):
+    resultado = None
+    if request.method == 'POST':
+        age = int(request.POST.get('age', 0))
+        cholesterol = request.POST.get('cholesterol', 'No')
+        smoking = request.POST.get('smoking', 'No')
+        general_health = request.POST.get('general_health', 'good')
+        exercise = request.POST.get('exercise', 'Yes')
 
-    return render(request, 'tp3/home.html', {'graph_url': graph_url})
-
+        resultado = evaluar_problema_corazon(age, cholesterol, smoking, general_health, exercise)
+    
+    return render(request, 'tp3/formulario.html', {'resultado': resultado})
